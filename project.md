@@ -36,3 +36,9 @@ npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
 4.在 package.json 文件中添加 script
 
 "commit": "cz"
+
+#### 1.5.3 vue.config.js 配置
+
+1.根目录下创建 vue.config.js 文件
+
+2.https://cli.vuejs.org/zh/config/cli.vuejs.org/zh/config/查询配置项
