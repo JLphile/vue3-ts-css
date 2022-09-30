@@ -69,7 +69,7 @@ configureWebpack: {
 
 }
 
-#### webpack.config.js 配置
+#### 2.4.2webpack.config.js 配置
 
 constAutoImport=require('unplugin-auto-import/webpack')
 
