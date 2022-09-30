@@ -4,6 +4,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import './service/axios_demo'
+
 // 全局引入组件
 // import ElementPlus from 'element-plus'
 
