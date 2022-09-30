@@ -40,29 +40,41 @@ axios.get('http://123.207.32.32:8000/home/multidata').then((res) => {
 // })
 
 // 4.axios的配置选项
+// 4.1全局配置
 axios.defaults.baseURL = 'http://httpbin.org'
 axios.defaults.timeout = 10000
 // axios.defaults.headers = {}
 
+// 4.2 每个请求单独配置
+// axios
+//   .get('/get', {
+//     params: {
+//       name: 'coderwhy',
+//       age: 19
+//     },
+//     timeout: 5000,
+//     headers: {}
+//   })
+//   .then((res) => {
+//     console.log(res.data)
+//   })
+// axios
+//   .post('/post', {
+//     params: {
+//       name: 'coderwhy',
+//       age: 19
+//     }
+//   })
+//   .then((res) => {
+//     console.log(res.data)
+//   })
+
+// 5.axios.all :发送多个请求，并将数据一起返回
 axios
-  .get('/get', {
-    params: {
-      name: 'coderwhy',
-      age: 19
-    },
-    timeout: 5000,
-    headers: {}
-  })
+  .all([
+    axios.get('/get', { params: { name: 'why', age: 18 } }),
+    axios.post('/post', { data: { name: 'why', age: 18 } })
+  ])
   .then((res) => {
-    console.log(res.data)
-  })
-axios
-  .post('/post', {
-    params: {
-      name: 'coderwhy',
-      age: 19
-    }
-  })
-  .then((res) => {
-    console.log(res.data)
+    console.log(res)
   })
