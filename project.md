@@ -42,3 +42,57 @@ npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
 1.根目录下创建 vue.config.js 文件
 
 2.https://cli.vuejs.org/zh/config/cli.vuejs.org/zh/config/查询配置项
+
+#### 2.4.2 vue.config.js 配置
+
+configureWebpack: {
+
+    plugins: [
+
+    require('unplugin-auto-import/webpack')({
+
+    resolvers: [ElementPlusResolver()]
+
+    /* options */
+
+    }),
+
+    require('unplugin-vue-components/webpack')({
+
+    resolvers: [ElementPlusResolver()]
+
+    /* options */
+
+    })
+
+    ]
+
+}
+
+#### webpack.config.js 配置
+
+constAutoImport=require('unplugin-auto-import/webpack')
+
+constComponents=require('unplugin-vue-components/webpack')
+
+const { ElementPlusResolver } =require('unplugin-vue-components/resolvers')
+
+module.exports= {
+
+plugins: [
+
+    AutoImport({
+
+    resolvers: [ElementPlusResolver()]
+
+    }),
+
+    Components({
+
+    resolvers: [ElementPlusResolver()]
+
+    })
+
+]
+
+}

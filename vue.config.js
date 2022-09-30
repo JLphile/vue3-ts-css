@@ -1,5 +1,5 @@
 const path = require('path')
-
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 module.exports = {
   //1.配置方式一：CLI提供的属性
   outputDir: './build',
@@ -25,5 +25,17 @@ module.exports = {
     config.resolve.alias
       .set('@', path.resolve(__dirname, 'src'))
       .set('components', '@/components')
+  },
+  configureWebpack: {
+    plugins: [
+      require('unplugin-auto-import/webpack')({
+        resolvers: [ElementPlusResolver()]
+        /* options */
+      }),
+      require('unplugin-vue-components/webpack')({
+        resolvers: [ElementPlusResolver()]
+        /* options */
+      })
+    ]
   }
 }
