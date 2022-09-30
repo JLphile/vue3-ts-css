@@ -11,7 +11,7 @@
 import { defineComponent } from 'vue'
 
 // element-plus局部引入组件并注册
-import { ElButton } from 'element-plus'
+// import { ElButton } from 'element-plus'
 
 // element-plus局部引入样式方法1
 // import 'element-plus/es/components/button/style/css'
@@ -21,7 +21,7 @@ import { ElButton } from 'element-plus'
 
 export default defineComponent({
   name: 'App',
-  components: { ElButton }
+  components: {}
 })
 </script>
 
