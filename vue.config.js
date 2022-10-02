@@ -3,6 +3,8 @@ const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 module.exports = {
   //1.配置方式一：CLI提供的属性
   outputDir: './build',
+  //将来部署到服务器时，publicPath属性要注释掉
+  publicPath: './',
   //2.配置方式二：和webpack属性完全一致，最后会合并到webpack配置中
   // configureWebpack: {
   //   resolve: {

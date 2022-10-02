@@ -20,3 +20,6 @@ app.use(store)
 // app.use(ElementPlus)
 
 app.mount('#app')
+
+console.log(process.env.VUE_APP_BASE_URL)
+console.log(process.env.VUE_APP_BASE_NAME)
