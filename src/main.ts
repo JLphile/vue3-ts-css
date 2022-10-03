@@ -4,7 +4,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import './service/axios_demo'
+// import './service/axios_demo'
 
 import hyRequest from './service'
 
@@ -27,5 +27,9 @@ app.mount('#app')
 console.log(process.env.VUE_APP_BASE_URL)
 console.log(process.env.VUE_APP_BASE_NAME)
 
+hyRequest.request({
+  url: '/home/multidata',
+  method: 'GET'
+})
+
 // hyRequest.get()
-// hyRequest.request()
