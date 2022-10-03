@@ -6,6 +6,8 @@ import store from './store'
 
 import './service/axios_demo'
 
+import hyRequest from './service'
+
 // 全局引入组件
 // import ElementPlus from 'element-plus'
 
@@ -21,5 +23,9 @@ app.use(store)
 
 app.mount('#app')
 
+// 环境变量
 console.log(process.env.VUE_APP_BASE_URL)
 console.log(process.env.VUE_APP_BASE_NAME)
+
+// hyRequest.get()
+// hyRequest.request()
