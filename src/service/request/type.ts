@@ -9,4 +9,5 @@ export interface HYRequestInterceptors {
 // 采用继承的方式拓展了原生axios的类型限制
 export interface HYRequestConfig extends AxiosRequestConfig {
   interceptors?: HYRequestInterceptors
+  showLoading?: boolean
 }
