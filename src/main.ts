@@ -42,10 +42,21 @@ console.log(process.env.VUE_APP_BASE_NAME)
 //   }
 // })
 
-hyRequest.request({
-  url: '/home/multidata',
-  method: 'GET',
-  showLoading: false
-})
+interface DataType {
+  data: any
+  returnCode: string
+  success: boolean
+}
+
+hyRequest
+  .get<DataType>({
+    url: '/home/multidata',
+    showLoading: false
+  })
+  .then((res) => {
+    console.log(res.data)
+    console.log(res.returnCode)
+    console.log(res.success)
+  })
 
 // hyRequest.get()
