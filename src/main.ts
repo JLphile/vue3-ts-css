@@ -31,7 +31,7 @@ app.mount('#app')
 console.log(process.env.VUE_APP_BASE_URL)
 console.log(process.env.VUE_APP_BASE_NAME)
 
-// 注册element图标
+// 全局注册element图标
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }

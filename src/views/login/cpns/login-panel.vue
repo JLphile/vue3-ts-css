@@ -18,7 +18,7 @@
             <span>手机登录</span>
           </span>
         </template>
-        <h2>手机登录</h2>
+        <login-phone></login-phone>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -27,10 +27,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import LoginAccount from './login-account.vue'
+import LoginPhone from './login-phone.vue'
 
 export default defineComponent({
   components: {
-    LoginAccount
+    LoginAccount,
+    LoginPhone
   },
   setup() {
     return {}

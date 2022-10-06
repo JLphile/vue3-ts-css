@@ -13,6 +13,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
+import { rules } from '../config/account-config'
 
 export default defineComponent({
   setup() {
@@ -21,33 +22,6 @@ export default defineComponent({
       password: ''
     })
 
-    // 编写好规则
-    const rules = {
-      name: [
-        {
-          required: true,
-          message: '用户名是必须的',
-          trigger: 'blur'
-        },
-        {
-          pattern: /^[a-z0-9]{5,10}/,
-          message: '用户名必须是5-10个字母或数字',
-          trigger: 'blur'
-        }
-      ],
-      password: [
-        {
-          required: true,
-          message: '密码是必须的',
-          trigger: 'blur'
-        },
-        {
-          pattern: /^[a-z0-9]{3,}/,
-          message: '密码必须是3位以上的字母或数字',
-          trigger: 'blur'
-        }
-      ]
-    }
     return {
       account,
       rules
