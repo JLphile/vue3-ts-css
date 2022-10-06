@@ -1,10 +1,14 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import 'normalize.css'
+import './assets/css/index.less'
 
 import router from './router'
 import store from './store'
 
 // import './service/axios_demo'
+
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 import hyRequest from './service'
 
@@ -26,6 +30,11 @@ app.mount('#app')
 // 环境变量
 console.log(process.env.VUE_APP_BASE_URL)
 console.log(process.env.VUE_APP_BASE_NAME)
+
+// 注册element图标
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
 
 // hyRequest.request({
 //   url: '/home/multidata',
