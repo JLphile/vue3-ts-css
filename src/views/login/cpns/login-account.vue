@@ -1,6 +1,6 @@
 <template>
   <div class="login-account">
-    <el-form label-width="60px" :rules="rules" :model="account">
+    <el-form label-width="60px" :rules="rules" :model="account" ref="formRef">
       <el-form-item label="账号" prop="name">
         <el-input v-model="account.name" />
       </el-form-item>
@@ -12,8 +12,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, reactive, ref } from 'vue'
 import { rules } from '../config/account-config'
+import { ElForm } from 'element-plus'
 
 export default defineComponent({
   setup() {
@@ -22,9 +23,20 @@ export default defineComponent({
       password: ''
     })
 
+    const formRef = ref<InstanceType<typeof ElForm>>()
+    const loginAction = () => {
+      // console.log('account正在开始登录...')
+      formRef.value?.validate((valid) => {
+        if (valid) {
+          console.log('真正执行登录逻辑')
+        }
+      })
+    }
     return {
       account,
-      rules
+      rules,
+      loginAction,
+      formRef
     }
   }
 })
