@@ -28,8 +28,8 @@ app.use(store)
 app.mount('#app')
 
 // 环境变量
-console.log(process.env.VUE_APP_BASE_URL)
-console.log(process.env.VUE_APP_BASE_NAME)
+// console.log(process.env.VUE_APP_BASE_URL)
+// console.log(process.env.VUE_APP_BASE_NAME)
 
 // 全局注册element图标
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
@@ -63,8 +63,8 @@ hyRequest
     showLoading: false
   })
   .then((res) => {
-    console.log(res.data)
-    console.log(res.returnCode)
+    // console.log(res.data)
+    // console.log(res.returnCode)
     console.log(res.success)
   })
 
